@@ -1,15 +1,25 @@
-import React from 'react'
-import {Routes,Route} from 'react-router-dom'
+import React,{useContext} from 'react'
+import {Routes,Route,Navigate} from 'react-router-dom'
 import Signup from './pages/Signup'
 import Login from './pages/Login';
 import Home from './pages/Home';
+import { userDataContext } from './context/userContext';
 function App() {
+  let { userData,loading } = useContext(userDataContext);
+  if(loading){
+    return (
+      <div className="w-full h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100">
+        <div className="text-xl font-semibold text-blue-700">Loading...</div>
+      </div>
+    );
+  }
+ 
   return (
    
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/" element={userData?<Home/>:<Navigate to ="/login" replace/>} />
+        <Route path="/signup" element={userData?<Navigate to="/" replace/>:<Signup/>} />
+        <Route path="/login" element={userData?<Navigate to="/" replace/>:<Login/>} />
       </Routes>
   
   )

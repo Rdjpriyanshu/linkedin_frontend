@@ -1,18 +1,21 @@
-import React, { createContext } from 'react'
+// require("dotenv").config()
+import React, { createContext } from "react";
+
 // eslint-disable-next-line react-refresh/only-export-components
-export const authDataContext=createContext();
+export const authDataContext = createContext();
 
-
-function AuthContext({children}) {
-    const serverUrl="http://localhost:8000"
-    let value={
-        serverUrl
-    }
+function AuthContext({ children }) {
+  const serverUrl = import.meta.env.VITE_BACKEND_URL;
+  let value = {
+    serverUrl,
+  };
   return (
     <div>
-      <authDataContext.Provider value={value}>{children}</authDataContext.Provider>
+      <authDataContext.Provider value={value}>
+        {children}
+      </authDataContext.Provider>
     </div>
   );
 }
 
-export default AuthContext
+export default AuthContext;
