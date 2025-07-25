@@ -3,7 +3,7 @@ import {Routes,Route,Navigate} from 'react-router-dom'
 import Signup from './pages/Signup'
 import Login from './pages/Login';
 import Home from './pages/Home';
-import { userDataContext } from './context/userContext';
+import { userDataContext } from './context/UserContext';
 function App() {
   let { userData,loading } = useContext(userDataContext);
   if(loading){
