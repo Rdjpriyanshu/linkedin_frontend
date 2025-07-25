@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Navbar from "../components/Navbar";
 import EditProfile from "../components/EditProfile";
-import { userDataContext } from "../context/userContext";
+import { userDataContext } from "../context/UserContext";
 import { GiPencil } from "react-icons/gi";
 
 function Home() {
