@@ -3,7 +3,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { HiMiniUsers } from "react-icons/hi2";
 import { FaHome } from "react-icons/fa";
-import { userDataContext } from '../context/userContext';
+import { userDataContext } from '../context/UserContext';
 import { authDataContext } from '../context/AuthContext';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";

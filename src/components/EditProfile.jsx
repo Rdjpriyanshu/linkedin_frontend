@@ -1,5 +1,5 @@
 import React, { useContext } from "react"; // Added useContext import
-import { userDataContext } from "../context/userContext";
+import { userDataContext } from "../context/UserContext";
 
 const EditProfile = () => {
   let { edit, setedit, userData, setUserData } = useContext(userDataContext);
